@@ -2796,6 +2796,39 @@ section {
     padding: 20px !important;
   }
   
+  .menu-card {
+    margin: 0 auto !important;
+    max-width: 400px !important;
+  }
+  
+  .menu-card-image {
+    height: 220px !important;
+  }
+  
+  .menu-card-image img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+  }
+  
+  .menu-card-content {
+    padding: 20px !important;
+  }
+  
+  .menu-card-content h3 {
+    font-size: 1.5rem !important;
+  }
+  
+  .menu-card-content p {
+    font-size: 0.95rem !important;
+  }
+  
+  .menu-price {
+    font-size: 1.1rem !important;
+    padding: 8px 18px !important;
+  }
+  
   .menu-item {
     padding: 20px !important;
   }
@@ -2978,6 +3011,28 @@ section {
   
   .menu-item h3 {
     font-size: 1.2rem !important;
+  }
+  
+  /* Menu cards para pantallas muy pequeñas */
+  .menu-card {
+    max-width: 100% !important;
+  }
+  
+  .menu-card-image {
+    height: 200px !important;
+  }
+  
+  .menu-card-content h3 {
+    font-size: 1.3rem !important;
+  }
+  
+  .menu-card-content p {
+    font-size: 0.9rem !important;
+  }
+  
+  .menu-price {
+    font-size: 1rem !important;
+    padding: 7px 16px !important;
   }
   
   /* Carousel para pantallas muy pequeñas */
