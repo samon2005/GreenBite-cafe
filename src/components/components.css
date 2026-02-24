@@ -2631,63 +2631,76 @@ section {
 /* Mejoras específicas para dispositivos móviles */
 
 @media (max-width: 768px) {
-  /* Navbar mobile optimizado */
+  /* Navbar mobile optimizado - transparente como en PC */
   .navbar {
-    flex-direction: column !important;
+    flex-direction: row !important;
     padding: 16px 20px !important;
-    background: rgba(123, 74, 40, 0.95) !important;
-    backdrop-filter: blur(10px) !important;
-    position: fixed !important;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
+    position: absolute !important;
+    box-shadow: none !important;
+    align-items: center !important;
   }
   
   .navbar-logo {
-    font-size: 1.5rem !important;
-    margin-bottom: 12px;
+    font-size: 1.4rem !important;
+    margin-bottom: 0 !important;
+    flex-shrink: 0;
   }
   
   .navbar-links {
-    width: 100% !important;
-    justify-content: center !important;
+    width: auto !important;
+    justify-content: flex-end !important;
     flex-wrap: wrap !important;
-    gap: 8px !important;
-    margin-top: 8px !important;
+    gap: 6px !important;
+    margin-top: 0 !important;
+    margin-left: auto !important;
   }
   
   .nav-link-btn {
-    padding: 8px 16px !important;
-    font-size: 0.85rem !important;
+    padding: 8px 14px !important;
+    font-size: 0.8rem !important;
     white-space: nowrap;
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(5px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  }
+  
+  .nav-link-btn.active {
+    background: rgba(107, 142, 35, 0.85) !important;
+    border-color: rgba(107, 142, 35, 0.9) !important;
   }
   
   /* Hero mobile optimizado */
   .hero-split {
     min-height: 100vh !important;
     flex-direction: column !important;
-    padding-top: 120px;
+    padding-top: 0 !important;
   }
   
   .hero-split-left,
   .hero-split-right {
-    height: 40vh !important;
+    height: 50vh !important;
     flex: none !important;
   }
   
   .hero-split-center {
-    position: relative !important;
-    left: 0 !important;
-    transform: none !important;
-    margin-top: -60vh !important;
+    position: absolute !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    margin-top: 0 !important;
     padding: 20px !important;
-    max-width: 100% !important;
+    max-width: 90% !important;
     height: auto !important;
   }
   
   .hero-center-content {
-    padding: 30px 24px !important;
+    padding: 32px 24px !important;
     border-radius: 16px !important;
-    background: rgba(255, 255, 255, 0.15) !important;
-    backdrop-filter: blur(20px) !important;
+    background: rgba(255, 255, 255, 0.12) !important;
+    backdrop-filter: blur(25px) saturate(150%) !important;
+    -webkit-backdrop-filter: blur(25px) saturate(150%) !important;
   }
   
   .hero-badge-split {
@@ -2697,29 +2710,31 @@ section {
   }
   
   .hero-split-title {
-    font-size: 2.5rem !important;
+    font-size: 2.8rem !important;
     line-height: 1.1 !important;
     margin-bottom: 12px !important;
-    letter-spacing: 1px !important;
+    letter-spacing: 2px !important;
   }
   
   .hero-split-text {
-    font-size: 0.95rem !important;
-    line-height: 1.5 !important;
+    font-size: 1rem !important;
+    line-height: 1.6 !important;
     margin-bottom: 24px !important;
   }
   
   .hero-split-buttons {
-    flex-direction: column !important;
+    flex-direction: row !important;
     gap: 12px !important;
     width: 100%;
+    justify-content: center !important;
   }
   
   .hero-btn-primary,
   .hero-btn-secondary {
-    width: 100% !important;
-    padding: 14px 24px !important;
-    font-size: 0.95rem !important;
+    flex: 1 !important;
+    padding: 12px 20px !important;
+    font-size: 0.9rem !important;
+    min-width: 0 !important;
   }
   
   .scroll-down-indicator {
@@ -2887,31 +2902,45 @@ section {
 
 /* Extra small devices */
 @media (max-width: 480px) {
+  .navbar {
+    padding: 12px 16px !important;
+  }
+  
   .navbar-logo {
-    font-size: 1.3rem !important;
+    font-size: 1.2rem !important;
   }
   
   .nav-link-btn {
-    padding: 6px 12px !important;
-    font-size: 0.8rem !important;
+    padding: 6px 10px !important;
+    font-size: 0.75rem !important;
+  }
+  
+  .hero-split-center {
+    max-width: 95% !important;
+    padding: 16px !important;
+  }
+  
+  .hero-center-content {
+    padding: 28px 20px !important;
   }
   
   .hero-split-title {
-    font-size: 2rem !important;
+    font-size: 2.3rem !important;
   }
   
   .hero-split-text {
-    font-size: 0.85rem !important;
+    font-size: 0.9rem !important;
   }
   
   .hero-btn-primary,
   .hero-btn-secondary {
-    padding: 12px 20px !important;
-    font-size: 0.9rem !important;
+    padding: 11px 16px !important;
+    font-size: 0.85rem !important;
   }
   
-  .hero-center-content {
-    padding: 24px 20px !important;
+  .hero-badge-split {
+    font-size: 0.65rem !important;
+    padding: 5px 12px !important;
   }
   
   .about-content-absolute h2,
