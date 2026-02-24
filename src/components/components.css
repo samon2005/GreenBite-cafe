@@ -2868,6 +2868,14 @@ section {
   /* Products carousel mobile */
   .carousel-container {
     padding: 60px 10px !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+  
+  .carousel-btn {
+    width: 52px !important;
+    height: 52px !important;
+    font-size: 1.5rem !important;
   }
   
   .carousel-slide {
@@ -2876,27 +2884,46 @@ section {
   
   .carousel-content {
     flex-direction: column !important;
-    padding: 20px !important;
+    padding: 24px 20px !important;
+    gap: 20px !important;
+    background: rgba(255, 255, 255, 0.7) !important;
+  }
+  
+  .carousel-image-wrapper {
+    max-width: 100% !important;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
   }
   
   .carousel-image {
     width: 100% !important;
-    max-width: 100% !important;
-    height: 250px !important;
-    margin-bottom: 20px !important;
+    max-width: 300px !important;
+    height: 280px !important;
+    object-fit: cover !important;
+    margin-bottom: 0 !important;
+    border-radius: 16px !important;
+    display: block !important;
   }
   
   .carousel-text {
     width: 100% !important;
     text-align: center !important;
+    padding: 8px !important;
   }
   
   .carousel-text h3 {
-    font-size: 1.5rem !important;
+    font-size: 1.6rem !important;
+    margin-bottom: 12px !important;
   }
   
   .carousel-text p {
-    font-size: 0.95rem !important;
+    font-size: 1rem !important;
+    line-height: 1.6 !important;
+  }
+  
+  .carousel-indicators {
+    margin-top: 24px !important;
   }
 }
 
@@ -2951,5 +2978,33 @@ section {
   
   .menu-item h3 {
     font-size: 1.2rem !important;
+  }
+  
+  /* Carousel para pantallas muy pequeñas */
+  .carousel-container {
+    padding: 40px 8px !important;
+  }
+  
+  .carousel-btn {
+    width: 44px !important;
+    height: 44px !important;
+    font-size: 1.3rem !important;
+  }
+  
+  .carousel-content {
+    padding: 20px 16px !important;
+  }
+  
+  .carousel-image {
+    max-width: 280px !important;
+    height: 240px !important;
+  }
+  
+  .carousel-text h3 {
+    font-size: 1.4rem !important;
+  }
+  
+  .carousel-text p {
+    font-size: 0.9rem !important;
   }
 }
