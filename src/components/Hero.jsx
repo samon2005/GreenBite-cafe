@@ -66,9 +66,15 @@ function Hero({ onNavigate }) {
             <button className="hero-btn-primary" onClick={() => onNavigate('menu')}>
               Ver Menú
             </button>
-            <button className="hero-btn-secondary" onClick={() => onNavigate('contact')}>
+            <a 
+              href="https://wa.me/573242090985?text=Hola! Me gustaría hacer una reserva en GreenBite Café" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hero-btn-secondary"
+              style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+            >
               Reservar
-            </button>
+            </a>
           </div>
         </div>
       </div>
