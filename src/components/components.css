@@ -2626,3 +2626,301 @@ section {
     right: 8px;
   }
 }
+
+/* ========== MOBILE RESPONSIVE FIXES ========== */
+/* Mejoras específicas para dispositivos móviles */
+
+@media (max-width: 768px) {
+  /* Navbar mobile optimizado */
+  .navbar {
+    flex-direction: column !important;
+    padding: 16px 20px !important;
+    background: rgba(123, 74, 40, 0.95) !important;
+    backdrop-filter: blur(10px) !important;
+    position: fixed !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+  }
+  
+  .navbar-logo {
+    font-size: 1.5rem !important;
+    margin-bottom: 12px;
+  }
+  
+  .navbar-links {
+    width: 100% !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+    margin-top: 8px !important;
+  }
+  
+  .nav-link-btn {
+    padding: 8px 16px !important;
+    font-size: 0.85rem !important;
+    white-space: nowrap;
+  }
+  
+  /* Hero mobile optimizado */
+  .hero-split {
+    min-height: 100vh !important;
+    flex-direction: column !important;
+    padding-top: 120px;
+  }
+  
+  .hero-split-left,
+  .hero-split-right {
+    height: 40vh !important;
+    flex: none !important;
+  }
+  
+  .hero-split-center {
+    position: relative !important;
+    left: 0 !important;
+    transform: none !important;
+    margin-top: -60vh !important;
+    padding: 20px !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  
+  .hero-center-content {
+    padding: 30px 24px !important;
+    border-radius: 16px !important;
+    background: rgba(255, 255, 255, 0.15) !important;
+    backdrop-filter: blur(20px) !important;
+  }
+  
+  .hero-badge-split {
+    font-size: 0.7rem !important;
+    padding: 6px 14px !important;
+    margin-bottom: 16px !important;
+  }
+  
+  .hero-split-title {
+    font-size: 2.5rem !important;
+    line-height: 1.1 !important;
+    margin-bottom: 12px !important;
+    letter-spacing: 1px !important;
+  }
+  
+  .hero-split-text {
+    font-size: 0.95rem !important;
+    line-height: 1.5 !important;
+    margin-bottom: 24px !important;
+  }
+  
+  .hero-split-buttons {
+    flex-direction: column !important;
+    gap: 12px !important;
+    width: 100%;
+  }
+  
+  .hero-btn-primary,
+  .hero-btn-secondary {
+    width: 100% !important;
+    padding: 14px 24px !important;
+    font-size: 0.95rem !important;
+  }
+  
+  .scroll-down-indicator {
+    display: none !important;
+  }
+  
+  /* About section mobile */
+  .about {
+    padding: 60px 20px !important;
+    min-height: auto !important;
+  }
+  
+  .about-content-absolute {
+    padding: 30px 20px !important;
+    margin-top: 0 !important;
+    min-height: auto !important;
+  }
+  
+  .about-content-absolute h2 {
+    font-size: 2rem !important;
+    margin-bottom: 16px !important;
+  }
+  
+  .about-content-absolute p {
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
+    margin-bottom: 12px !important;
+  }
+  
+  /* Menu section mobile */
+  .menu-hero {
+    padding: 80px 20px 40px !important;
+    min-height: auto !important;
+  }
+  
+  .menu-hero h1 {
+    font-size: 2rem !important;
+    margin-bottom: 12px !important;
+  }
+  
+  .menu-hero p {
+    font-size: 0.9rem !important;
+  }
+  
+  .menu-categories {
+    padding: 0 10px !important;
+    gap: 8px !important;
+    flex-wrap: wrap !important;
+  }
+  
+  .category-btn {
+    padding: 8px 16px !important;
+    font-size: 0.85rem !important;
+  }
+  
+  .menu-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+    padding: 20px !important;
+  }
+  
+  .menu-item {
+    padding: 20px !important;
+  }
+  
+  .menu-item h3 {
+    font-size: 1.3rem !important;
+  }
+  
+  .menu-item p {
+    font-size: 0.9rem !important;
+  }
+  
+  /* Cart mobile */
+  .cart {
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    right: auto !important;
+    max-width: calc(100% - 40px) !important;
+    width: 90% !important;
+    max-height: 80vh !important;
+    overflow-y: auto !important;
+    padding: 20px !important;
+  }
+  
+  /* Location section mobile */
+  .location-hero {
+    padding: 80px 20px 40px !important;
+    min-height: auto !important;
+  }
+  
+  .location-hero h1 {
+    font-size: 2rem !important;
+  }
+  
+  .location-info {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+    padding: 20px !important;
+  }
+  
+  .location-details {
+    padding: 20px !important;
+  }
+  
+  .location-map iframe {
+    height: 300px !important;
+  }
+  
+  /* Footer mobile */
+  .footer {
+    padding: 40px 20px !important;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+  
+  .footer h3 {
+    font-size: 1.2rem !important;
+  }
+  
+  .footer p,
+  .footer a {
+    font-size: 0.9rem !important;
+  }
+  
+  /* Products carousel mobile */
+  .carousel-container {
+    padding: 60px 10px !important;
+  }
+  
+  .carousel-slide {
+    min-width: 100% !important;
+  }
+  
+  .carousel-content {
+    flex-direction: column !important;
+    padding: 20px !important;
+  }
+  
+  .carousel-image {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 250px !important;
+    margin-bottom: 20px !important;
+  }
+  
+  .carousel-text {
+    width: 100% !important;
+    text-align: center !important;
+  }
+  
+  .carousel-text h3 {
+    font-size: 1.5rem !important;
+  }
+  
+  .carousel-text p {
+    font-size: 0.95rem !important;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  .navbar-logo {
+    font-size: 1.3rem !important;
+  }
+  
+  .nav-link-btn {
+    padding: 6px 12px !important;
+    font-size: 0.8rem !important;
+  }
+  
+  .hero-split-title {
+    font-size: 2rem !important;
+  }
+  
+  .hero-split-text {
+    font-size: 0.85rem !important;
+  }
+  
+  .hero-btn-primary,
+  .hero-btn-secondary {
+    padding: 12px 20px !important;
+    font-size: 0.9rem !important;
+  }
+  
+  .hero-center-content {
+    padding: 24px 20px !important;
+  }
+  
+  .about-content-absolute h2,
+  .menu-hero h1,
+  .location-hero h1 {
+    font-size: 1.8rem !important;
+  }
+  
+  .menu-item h3 {
+    font-size: 1.2rem !important;
+  }
+}
