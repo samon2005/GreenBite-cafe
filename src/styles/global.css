@@ -1,0 +1,177 @@
+/* global.css - Estilos globales para GreenBite Café */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Open+Sans:wght@300;400;600;700&display=swap');
+
+:root {
+  --brown-main: #7B4A28;
+  --brown-dark: #5d3a1a;
+  --brown-light: #a0724e;
+  --white: #FFFFFF;
+  --cream: #fdf5ec;
+  --pink-accent: #F4C2C2;
+  --pink-light: #ffdbdb;
+  --pink-dark: #e8a8a8;
+  --green-main: #6B8E23;
+  --green-dark: #556B2F;
+  --green-light: #9ACD32;
+  --green-soft: #C8E6C9;
+  --green-mint: #E8F5E9;
+  --shadow-soft: 0 4px 20px rgba(123, 74, 40, 0.1);
+  --shadow-medium: 0 8px 32px rgba(123, 74, 40, 0.15);
+  --shadow-hard: 0 12px 48px rgba(123, 74, 40, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', 'Open Sans', Arial, sans-serif;
+  background: linear-gradient(to bottom, var(--white) 0%, var(--cream) 100%);
+  color: var(--brown-main);
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Montserrat', 'Poppins', sans-serif;
+  color: var(--brown-main);
+  font-weight: 700;
+}
+
+button, .cta {
+  background: linear-gradient(135deg, var(--brown-main) 0%, var(--brown-dark) 100%);
+  color: var(--white);
+  border: none;
+  border-radius: 12px;
+  padding: 12px 28px;
+  font-family: 'Poppins', Arial, sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-soft), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+button::after, .cta::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+button:hover::after, .cta:hover::after {
+  width: 300px;
+  height: 300px;
+}
+
+button:hover, .cta:hover {
+  background: linear-gradient(135deg, var(--pink-accent) 0%, var(--pink-dark) 100%);
+  color: var(--brown-main);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  background: var(--cream);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--brown-main) 0%, var(--brown-dark) 100%);
+  border-radius: 10px;
+  border: 2px solid var(--cream);
+  transition: background 0.3s;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--pink-accent) 0%, var(--pink-dark) 100%);
+}
+
+.fade-in {
+  animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
