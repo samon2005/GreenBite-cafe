@@ -1,4 +1,5 @@
 import React from 'react';
+import ContactForm from './ContactForm';
 
 function Contact() {
   return (
@@ -50,6 +51,12 @@ function Contact() {
             </a>
             <p className="whatsapp-number">+57 324 209 0985</p>
           </div>
+        </div>
+
+        {/* Formulario de contacto con n8n */}
+        <div className="contact-form-section">
+          <h3>O envíanos un mensaje</h3>
+          <ContactForm />
         </div>
       </div>
     </section>
