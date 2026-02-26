@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import ReservationForm from './ReservationForm';
 
 function Hero({ onNavigate }) {
   const [currentLeftImage, setCurrentLeftImage] = useState(0);
   const [currentRightImage, setCurrentRightImage] = useState(0);
+  const [isReservationFormOpen, setIsReservationFormOpen] = useState(false);
   
   // Imágenes para el lado izquierdo (café, granos, preparación)
   const leftImages = [
@@ -66,15 +68,12 @@ function Hero({ onNavigate }) {
             <button className="hero-btn-primary" onClick={() => onNavigate('menu')}>
               Ver Menú
             </button>
-            <a 
-              href="https://wa.me/573242090985?text=Hola! Me gustaría hacer una reserva en GreenBite Café" 
-              target="_blank" 
-              rel="noopener noreferrer"
+            <button 
               className="hero-btn-secondary"
-              style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+              onClick={() => setIsReservationFormOpen(true)}
             >
               Reservar
-            </a>
+            </button>
           </div>
         </div>
       </div>
@@ -96,6 +95,12 @@ function Hero({ onNavigate }) {
         <span>Desliza</span>
         <div className="scroll-arrow">↓</div>
       </div>
+
+      {/* Formulario de reserva */}
+      <ReservationForm 
+        isOpen={isReservationFormOpen}
+        onClose={() => setIsReservationFormOpen(false)}
+      />
     </section>
   );
 }
