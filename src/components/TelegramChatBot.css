@@ -1,0 +1,657 @@
+/* ========================================
+   TELEGRAM CHATBOT STYLES
+   ======================================== */
+
+.telegram-chatbot {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  font-family: 'Inter', 'Open Sans', Arial, sans-serif;
+}
+
+/* Botón flotante */
+.chat-toggle-btn {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--green-main) 0%, var(--green-dark) 100%);
+  border: none;
+  box-shadow: 0 8px 24px rgba(107, 142, 35, 0.4);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 8px 24px rgba(107, 142, 35, 0.4);
+  }
+  50% {
+    box-shadow: 0 8px 32px rgba(107, 142, 35, 0.6);
+  }
+}
+
+.chat-toggle-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 32px rgba(107, 142, 35, 0.5);
+}
+
+.chat-toggle-btn.hidden {
+  transform: scale(0);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.chat-icon {
+  font-size: 2rem;
+}
+
+.chat-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: var(--pink-accent);
+  color: var(--brown-main);
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 10px;
+  border: 2px solid white;
+}
+
+/* Ventana del chat */
+.chat-window {
+  position: fixed;
+  bottom: 100px;
+  right: 24px;
+  width: 380px;
+  height: 600px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 16px 64px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: slideInUp 0.3s ease-out;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Header del chat */
+.chat-header {
+  background: linear-gradient(135deg, var(--green-main) 0%, var(--green-dark) 100%);
+  color: white;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.chat-header-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.chat-avatar {
+  width: 48px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.chat-header-text h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+}
+
+.status {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.status::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: #4ade80;
+  border-radius: 50%;
+  display: inline-block;
+  animation: blink 2s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.chat-close-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.chat-close-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Mensajes */
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  background: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.chat-messages::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+  background: var(--green-main);
+  border-radius: 10px;
+}
+
+.message {
+  display: flex;
+  gap: 8px;
+  animation: fadeInMessage 0.3s ease-out;
+}
+
+@keyframes fadeInMessage {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.bot-message {
+  align-self: flex-start;
+  flex-direction: row;
+}
+
+.user-message {
+  align-self: flex-end;
+  flex-direction: row-reverse;
+}
+
+.message-avatar {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, var(--green-main) 0%, var(--green-dark) 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.message-content {
+  max-width: 70%;
+  background: white;
+  padding: 12px 16px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.user-message .message-content {
+  background: linear-gradient(135deg, var(--green-main) 0%, var(--green-dark) 100%);
+  color: white;
+}
+
+.message-content p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--brown-main);
+  white-space: pre-wrap;
+}
+
+.user-message .message-content p {
+  color: white;
+}
+
+.message-time {
+  font-size: 0.75rem;
+  color: #999;
+  margin-top: 4px;
+  display: block;
+}
+
+.user-message .message-time {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Indicador de escritura */
+.typing-indicator {
+  display: flex;
+  gap: 4px;
+  padding: 8px 12px;
+}
+
+.typing-indicator span {
+  width: 8px;
+  height: 8px;
+  background: var(--green-main);
+  border-radius: 50%;
+  animation: typing 1.4s infinite;
+}
+
+.typing-indicator span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-indicator span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes typing {
+  0%, 60%, 100% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+  30% {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+}
+
+/* Respuestas rápidas después de mensajes */
+.message-quick-replies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-left: 40px;
+  margin-top: 8px;
+  animation: fadeInMessage 0.3s ease-out 0.2s backwards;
+}
+
+.message-quick-reply-btn {
+  background: rgba(107, 142, 35, 0.08);
+  border: 1.5px solid var(--green-main);
+  color: var(--green-main);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-weight: 500;
+  font-family: 'Inter', 'Open Sans', Arial, sans-serif;
+}
+
+.message-quick-reply-btn:hover {
+  background: var(--green-main);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(107, 142, 35, 0.3);
+}
+
+/* Formulario de entrada */
+.chat-input-form {
+  display: flex;
+  gap: 8px;
+  padding: 16px 20px;
+  background: white;
+  border-top: 1px solid #e5e7eb;
+}
+
+.chat-input {
+  flex: 1;
+  border: 2px solid #e5e7eb;
+  border-radius: 24px;
+  padding: 12px 16px;
+  font-size: 0.95rem;
+  font-family: 'Inter', 'Open Sans', Arial, sans-serif;
+  outline: none;
+  transition: all 0.2s;
+}
+
+.chat-input:focus {
+  border-color: var(--green-main);
+  box-shadow: 0 0 0 3px rgba(107, 142, 35, 0.1);
+}
+
+.chat-input:disabled {
+  background: #f3f4f6;
+  cursor: not-allowed;
+}
+
+.chat-send-btn {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, var(--green-main) 0%, var(--green-dark) 100%);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  box-shadow: 0 4px 12px rgba(107, 142, 35, 0.3);
+}
+
+.chat-send-btn:hover:not(:disabled) {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(107, 142, 35, 0.4);
+}
+
+.chat-send-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ========================================
+   CALENDAR PICKER STYLES
+   ======================================== */
+
+.picker-container {
+  margin: 12px 0;
+  animation: fadeInMessage 0.3s ease-out;
+}
+
+.calendar-picker {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--green-main);
+}
+
+.calendar-header h4 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--brown-main);
+  flex: 1;
+  text-align: center;
+}
+
+.calendar-nav-btn {
+  background: rgba(107, 142, 35, 0.1);
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: var(--green-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  font-weight: bold;
+}
+
+.calendar-nav-btn:hover {
+  background: var(--green-main);
+  color: white;
+  transform: scale(1.05);
+}
+
+.calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.calendar-weekday {
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--green-dark);
+  padding: 8px 0;
+}
+
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.calendar-day {
+  aspect-ratio: 1;
+  border: 2px solid transparent;
+  background: rgba(107, 142, 35, 0.08);
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--brown-main);
+  transition: all 0.2s;
+}
+
+.calendar-day:hover:not(.disabled):not(.empty) {
+  background: rgba(107, 142, 35, 0.2);
+  border-color: var(--green-main);
+  transform: scale(1.05);
+}
+
+.calendar-day.selected {
+  background: linear-gradient(135deg, var(--green-main) 0%, var(--green-dark) 100%);
+  color: white;
+  border-color: var(--green-dark);
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(107, 142, 35, 0.4);
+}
+
+.calendar-day.disabled {
+  background: #f3f4f6;
+  color: #d1d5db;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.calendar-day.empty {
+  background: transparent;
+  cursor: default;
+}
+
+/* ========================================
+   TIME PICKER STYLES
+   ======================================== */
+
+.time-picker {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  margin: 12px 0;
+  animation: fadeInMessage 0.3s ease-out;
+}
+
+.time-picker-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--green-main);
+}
+
+.time-picker-header h4 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--brown-main);
+}
+
+.time-picker-header span {
+  font-size: 1.2rem;
+}
+
+.time-slots {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.time-slot {
+  background: rgba(107, 142, 35, 0.08);
+  border: 2px solid transparent;
+  border-radius: 10px;
+  padding: 12px 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--brown-main);
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+  font-family: 'Inter', 'Open Sans', Arial, sans-serif;
+}
+
+.time-slot:hover:not(.selected) {
+  background: rgba(107, 142, 35, 0.15);
+  border-color: var(--green-main);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(107, 142, 35, 0.2);
+}
+
+.time-slot.selected {
+  background: linear-gradient(135deg, var(--green-main) 0%, var(--green-dark) 100%);
+  color: white;
+  border-color: var(--green-dark);
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(107, 142, 35, 0.4);
+}
+
+/* ========================================
+   RESPONSIVE STYLES
+   ======================================== */
+
+@media (max-width: 480px) {
+  .chat-window {
+    width: calc(100vw - 32px);
+    height: calc(100vh - 120px);
+    right: 16px;
+    bottom: 80px;
+  }
+
+  .telegram-chatbot {
+    bottom: 16px;
+    right: 16px;
+  }
+
+  .chat-toggle-btn {
+    width: 56px;
+    height: 56px;
+  }
+
+  .chat-icon {
+    font-size: 1.75rem;
+  }
+
+  .message-content {
+    max-width: 80%;
+  }
+
+  .quick-replies {
+    gap: 6px;
+  }
+
+  .quick-reply-btn {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+  }
+
+  /* Calendar responsive */
+  .calendar-picker {
+    padding: 12px;
+  }
+
+  .calendar-header h4 {
+    font-size: 0.9rem;
+  }
+
+  .calendar-nav-btn {
+    width: 28px;
+    height: 28px;
+    font-size: 1rem;
+  }
+
+  .calendar-weekday {
+    font-size: 0.7rem;
+    padding: 6px 0;
+  }
+
+  .calendar-day {
+    font-size: 0.85rem;
+  }
+
+  /* Time picker responsive */
+  .time-picker {
+    padding: 12px;
+  }
+
+  .time-picker-header h4 {
+    font-size: 0.9rem;
+  }
+
+  .time-slots {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+  }
+
+  .time-slot {
+    padding: 10px 6px;
+    font-size: 0.85rem;
+  }
+}

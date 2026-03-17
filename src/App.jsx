@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './components/components.css';
+import './components/TelegramChatBot.css';
 import LoadingScreen from './components/LoadingScreen';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -10,6 +11,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Menu from './components/Menu';
 import Location from './components/Location';
+import TelegramChatBot from './components/TelegramChatBot';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -53,6 +55,7 @@ function App() {
           <Navbar currentPage={currentPage} onNavigate={setCurrentPage} />
           {renderPage()}
           <Footer />
+          <TelegramChatBot />
         </>
       )}
     </div>
