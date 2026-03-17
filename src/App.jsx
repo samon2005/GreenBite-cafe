@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './styles/modern.css';
 import './components/components.css';
 import LoadingScreen from './components/LoadingScreen';
 import Navbar from './components/Navbar';
